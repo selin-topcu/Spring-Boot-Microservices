@@ -1,0 +1,93 @@
+docker
+örnek image url
+https://hub.docker.com/r/cagkankantarci/hello-world-rest-api/tags
+
+image çekmek
+docker pull cagkankantarci/hello-world-rest-api:0.0.1-SNAPSHOT
+
+her zaman run durumunda olması için;
+docker run -d -p 8080:8080 cagkankantarci/hello-world-rest-api:0.0.1-SNAPSHOT
+46857c87a41115278469fbe0a640aa132f4f6ea39afc74945e047c7298e86d4b
+
+logları görüntülme
+docker logs 468     
+(46857c87a41115278469fbe0a640aa132f4f6ea39afc74945e047c7298e86d4b ilk harfleri)
+
+canlı logları görüntülme
+docker logs -f 468
+
+çalışan container bilgileri
+docker container ls
+
+detaylı
+docker container ls -a
+
+çalışan images bilgileri
+docker images
+
+container durdumaa
+docker container stop b8b 468
+
+aynı image farklı isim ile oluşturmak
+docker tag cagkankantarci/hello-world-rest-api:0.0.1-SNAPSHOT cagkankantarci/hello-world-rest-api:latest
+
+mysql 
+docker pull mysql
+
+mysql ile ilgili image var mı 
+docker search mysql
+
+image geçmişi
+docker image history 81a
+
+image inceleme
+docker image inspect 81a
+
+image silme
+docker image rm d2e
+
+canlı log görüntüleme
+docker events
+
+container durdurma
+docker container pause 0d0
+
+tekrar başlatma
+docker container unpause 0d0
+
+
+durdurulan containerları kaldırır
+docker container prune
+
+container durdurma
+docker container stop 0d0
+
+container zorla durdurma
+docker container kill bbe
+
+container yeniden başlatma komutu ile oluşturma
+docker container run -p 8080:8080 -d --restart=always cagkankantarci/hello-world-rest-api:0.0.1-SNAPSHOT
+
+container da çalışan işlemler
+docker top ae3
+
+çalışan container ile ilgili cpu memory bilgileri
+docker stats ae3
+
+cpu limite göre container oluşturma
+docker container run -p 8080:8080 -d -m 512m --cpu-quota 5000 cagkankantarci/hello-world-rest-api:0.0.1-SNAPSHOT
+
+sistem bilgileri
+docker system df
+
+openzipkin kurulumu
+docker run -p 9411:9411 openzipkin/zipkin:2.23
+
+
+
+
+
+
+
+
+
